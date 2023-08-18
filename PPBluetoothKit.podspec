@@ -19,7 +19,8 @@ Pod::Spec.new do |spec|
   spec.author       = 'Peng'
   spec.requires_arc = true
   spec.platform     = :ios, '9.0'
-
+  spec.xcconfig = { 'VALID_ARCHS' => 'arm64', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  spec.pod_target_xcconfig = { 'VALID_ARCHS' => 'arm64', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   spec.ios.vendored_frameworks = 'PPBluetoothKit.xcframework'
 
 end
